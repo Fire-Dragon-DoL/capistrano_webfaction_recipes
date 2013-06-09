@@ -7,7 +7,7 @@ module CapistranoWebfactionRecipes
 
       desc "Creates a deploy file that is well organized and makes easy webfaction task usage"
 
-      def copy_deploy_file
+      def copy_deploy
         target_file = 'config/deploy.rb'
         if File.exists?(target_file)
           return unless yes?('Deploy file already exists and will be overwritten, would you like to continue?')
