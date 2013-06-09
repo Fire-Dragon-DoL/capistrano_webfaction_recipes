@@ -19,11 +19,11 @@ module Webfaction
           remove_file(target_file)
         end
         rails_app_root_dir_name        = File.basename(Dir.pwd)
-        server_ssh_user                = ask?('Insert your server ssh username')
+        server_ssh_user                = ask('Insert your server ssh username')
         server_ssh_user                = 'PUT_SERVER_SSH_USER' if server_ssh_user.blank?
-        remote_rails_app_root_dir_name = ask?('Insert your remote rails application root directory name')
+        remote_rails_app_root_dir_name = ask('Insert your remote rails application root directory name')
         remote_rails_app_root_dir_name = 'PUT_REMOTE_RAILS_APP_ROOT_DIR_NAME' if remote_rails_app_root_dir_name.blank?
-        bitbucket_user                 = ask?('Insert your bitbucket username')
+        bitbucket_user                 = ask('Insert your bitbucket username')
         bitbucket_user                 = 'PUT_BITBUCKET_USER' if bitbucket_user.blank?
         template "deploy.rb.erb", target_file
       end
