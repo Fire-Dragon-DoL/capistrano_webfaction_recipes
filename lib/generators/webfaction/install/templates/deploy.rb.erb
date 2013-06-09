@@ -2,14 +2,14 @@ require 'bundler/capistrano'
 require 'capistrano_webfaction_recipes/all'
 
 # Webfaction settings
-set :application,           'PUT_RAILS_ROOT_DIR_NAME'
-set :user,                  'PUT_SERVER_SSH_USER'
+set :application,           '<%= rails_app_root_dir_name %>'
+set :user,                  '<%= server_ssh_user %>'
 set :branch,                :master
 set :ssh_options,           { forward_agent: true }
-set :app_short,             'PUT_REMOTE_RAILS_ROOT_DIR_NAME'
+set :app_short,             '<%= remote_rails_app_root_dir_name %>'
 set :external_assets_path,  []
 set :local_gemfile_path,    File.expand_path('../../Gemfile', __FILE__)
-set :bitbucket,             'PUT_BITBUCKET_USER'
+set :bitbucket,             '<%= bitbucket_user %>'
 set :uploaded_assets_paths, []
 
 # Calculated options
