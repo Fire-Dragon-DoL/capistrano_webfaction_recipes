@@ -141,53 +141,54 @@ Capistrano::Configuration.instance(:must_exist).load do
       cleanup
     end
 
-    desc "Cleanup everything except one"
+    desc "Cleanup everything except last"
     task :cleanup_all_but_one do
       set :keep_releases, 1
       cleanup
     end
 
-    desc "Setup the project and loads the database"
-    task :cold do
-      transaction do
-        update
-        schema_load
-        start
-      end
-    end
+    # FIXME: Some recipes here are not behaving correctly
+    # desc "Setup the project and loads the database"
+    # task :cold do
+    #   transaction do
+    #     update
+    #     schema_load
+    #     start
+    #   end
+    # end
 
-    namespace :full do
-      desc "Install gems, setup database with load, restart server"
-      task :default do
-        transaction do
-          update
-          bundle
-          schema_load
-          start
-        end
-      end
+    # namespace :full do
+    #   desc "Install gems, setup database with load, restart server"
+    #   task :default do
+    #     transaction do
+    #       update
+    #       bundle
+    #       schema_load
+    #       start
+    #     end
+    #   end
 
-      desc "Install gems, setup database with load, seed database, restart server"
-      task :seed do
-        transaction do
-          update
-          bundle
-          schema_load
-          db_seed
-          start
-        end
-      end
+    #   desc "Install gems, setup database with load, seed database, restart server"
+    #   task :seed do
+    #     transaction do
+    #       update
+    #       bundle
+    #       schema_load
+    #       db_seed
+    #       start
+    #     end
+    #   end
 
-      desc "Run migrate instead of load"
-      task :migrate do
-        transaction do
-          update
-          bundle
-          migrate
-          start
-        end
-      end
-    end
+    #   desc "Run migrate instead of load"
+    #   task :migrate do
+    #     transaction do
+    #       update
+    #       bundle
+    #       migrate
+    #       start
+    #     end
+    #   end
+    # end
   end
 
 end

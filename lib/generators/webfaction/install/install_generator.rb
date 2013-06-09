@@ -3,7 +3,8 @@ require 'rails'
 module Generators
   module Webfaction
     class InstallGenerator < Rails::Generators::Base
-      source_root File.expand_path("../../templates", __FILE__)
+      # Note: Not required if templates directory is in the same place
+      # source_root File.expand_path("../../templates", __FILE__)
 
       desc "Creates a deploy file that is well organized and makes easy webfaction task usage"
 
