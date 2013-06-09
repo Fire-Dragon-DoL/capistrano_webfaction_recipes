@@ -1,6 +1,7 @@
 # CapistranoWebfactionRecipes
 
-TODO: Write a gem description
+This is a simple gem that provides some useful capistrano recipes to handle a Webfaction shared hosting.
+
 
 ## Installation
 
@@ -18,7 +19,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Require the gem files in your deploy.rb file:
+
+    require 'capistrano_webfaction_recipes/all'
+
+Or (better) create a deploy.rb file through the generator by running:
+
+    rails generate webfaction:install
+
+Fill the options interactively, this will generate a nice deploy.rb file, ready to be used.
 
 ## Contributing
 
