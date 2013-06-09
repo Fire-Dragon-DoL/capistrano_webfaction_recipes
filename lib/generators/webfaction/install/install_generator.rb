@@ -1,7 +1,7 @@
 require 'rails'
 
-module CapistranoWebfactionRecipes
-  module Generators
+module Generators
+  module Webfaction
     class InstallGenerator < Rails::Generators::Base
       source_root File.expand_path("../../templates", __FILE__)
 
