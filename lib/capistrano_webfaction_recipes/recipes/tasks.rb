@@ -105,13 +105,9 @@ Capistrano::Configuration.instance(:must_exist).load do
 
   end
 
-  namespace :rake do  
-
-    desc "Run a task on a remote server. Use it with cap rake:invoke task=task_name"
-    task :invoke do
-      run "cd #{fetch(:current_path)}; bundle exec rake #{ENV['task']} RAILS_ENV=#{fetch(:rails_env)} RAILS_RAKE_TASK=1"
-    end
-
+  desc "Run a task on a remote server. Use it with cap rake:invoke task=task_name"
+  task :rake_invoke do
+    run "cd #{fetch(:current_path)}; bundle exec rake #{ENV['task']} RAILS_ENV=#{fetch(:rails_env)} RAILS_RAKE_TASK=1"
   end
 
   desc "Display local gemfile path"
