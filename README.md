@@ -2,6 +2,7 @@
 
 This is a simple gem that provides some useful capistrano recipes to handle a Webfaction shared hosting.
 
+["View the capistrano_webfaction_recipes documentation"](http://omniref.com/ruby/gems/capistrano_webfaction_recipes )
 
 ## Installation
 
